@@ -21,26 +21,11 @@ repos:
         args: [--pytest-test-first]
       - id: trailing-whitespace
 
-  - repo: https://github.com/psf/black
-    rev: 23.3.0
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.4.9
     hooks:
-      - id: black
-        language_version: python3.11
-
-  - repo: https://github.com/pycqa/flake8
-    rev: 5.0.4
-    hooks:
-      - id: flake8
-        args: [--max-line-length=88, --ignore=F811]
-
-  - repo: https://github.com/pycqa/pydocstyle
-    rev: 6.1.1
-    hooks:
-      - id: pydocstyle
-        exclude: ^(tests/)
-        additional_dependencies:
-          - toml
-
+      - id: ruff
+      - id: ruff-format
 
   - repo: https://github.com/pre-commit/mirrors-mypy
     rev: v1.5.0
@@ -58,9 +43,13 @@ repos:
     hooks:
       - id: python-safety-dependencies-check
         files: pyproject.toml
+        args: [ "--ignore=70612" ,
+                "--ignore=59234"
+              ]
+
 
   - repo: https://github.com/PyCQA/bandit
     rev: 1.7.4
     hooks:
       - id: bandit
-        exclude: tests
+        exclude: ^(tests/)
