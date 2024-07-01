@@ -1,8 +1,9 @@
 """Postgresql class."""
+
 from contextlib import asynccontextmanager
 from typing import Any
 
-from asyncpg import connect, Connection
+from asyncpg import Connection, connect
 from overrides import override
 from pydantic import validate_call
 

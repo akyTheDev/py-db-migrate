@@ -1,6 +1,6 @@
 """Main file."""
-import asyncio
 
+import asyncio
 from pathlib import Path
 
 import typer
@@ -13,7 +13,6 @@ from py_db_migrate.service.migration_down import MigrationDown
 from py_db_migrate.service.migration_files import MigrationFiles
 from py_db_migrate.service.migration_up import MigrationUp
 from py_db_migrate.service.start import Start
-
 
 app = typer.Typer(help="Awesome CLI user manager.")
 

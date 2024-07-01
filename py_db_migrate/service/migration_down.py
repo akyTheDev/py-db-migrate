@@ -1,4 +1,5 @@
 """Migration down service module."""
+
 from pathlib import Path
 
 import aiofiles

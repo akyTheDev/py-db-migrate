@@ -1,4 +1,5 @@
 """Migration service module."""
+
 from pathlib import Path
 
 from pydantic import validate_call
@@ -55,7 +56,7 @@ class MigrationTableAndFolderValidator(SqlService):
                 "SELECT EXISTS (SELECT 1 "
                 "FROM information_schema.tables "
                 " WHERE table_schema = 'public' "
-                f"AND table_name = '{name}' )"
+                f"AND table_name = '{name}')"
             )
         )[0]["exists"]
         return exist

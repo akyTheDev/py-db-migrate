@@ -1,4 +1,5 @@
 """Migration service module."""
+
 from datetime import datetime, timezone
 from pathlib import Path
 from posix import DirEntry
@@ -6,7 +7,6 @@ from typing import Iterable
 
 import aiofiles
 import aiofiles.os
-
 from asyncpg.exceptions import PostgresError
 from pydantic import validate_call
 from pypika import Query, Table
@@ -61,7 +61,7 @@ class MigrationUp(SqlService):
 
         except TableNotFoundError:
             await self.create_migration_table(name=migration_table)
-            self.logger.info(f"Migration table:{migration_table} is created.")
+            self.logger.info(f"Migration table: {migration_table} is created.")
 
         migrated_files_from_db: list[str] = await self.get_migrated_file_names_from_db(
             table=migration_table
@@ -87,8 +87,8 @@ class MigrationUp(SqlService):
             except (EmptyFileError, PostgresError) as e:
                 raise MigrationError(
                     f"Problem occurred. Check {migration_file_from_folder}.\n"
-                    f"`{str(e)}`"
-                )
+                    f"'{str(e)}'"
+                ) from e
 
     @validate_call
     async def create_migration_table(self, name: str) -> None:
@@ -101,10 +101,10 @@ class MigrationUp(SqlService):
             None.
         """
         await self.database.execute(  # nosec
-            f"CREATE TABLE IF NOT EXISTS {name} ( "
-            "date TIMESTAMP WITH TIME ZONE "
-            "NOT NULL DEFAULT NOW(),"
-            "name TEXT NOT NULL)"
+            f"CREATE TABLE IF NOT EXISTS {name} ("
+            " date TIMESTAMP WITH TIME ZONE "
+            " NOT NULL DEFAULT NOW(),"
+            " name TEXT NOT NULL)"
         )
 
     @validate_call

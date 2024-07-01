@@ -1,11 +1,11 @@
 """Start Service."""
+
 from pathlib import Path
 
 import yaml
 from pydantic import validate_call
 
 from py_db_migrate.service.service import Service
-
 from py_db_migrate.service.utils import check_existence_of_file
 
 

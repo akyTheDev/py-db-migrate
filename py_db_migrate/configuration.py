@@ -1,4 +1,5 @@
 """Configuration related objects."""
+
 import sys
 from functools import lru_cache
 from pathlib import Path
@@ -39,7 +40,7 @@ def get_configuration(path: Path) -> Configuration:
     logger.info("Reading configuration file...")
     try:
         config_data: dict[str, Any]
-        with open(path, "r") as yaml_file:
+        with open(path) as yaml_file:
             config_data = yaml.safe_load(yaml_file)
 
         configuration: Configuration = Configuration(
