@@ -39,7 +39,7 @@ jobs:
             ${{ runner.os }}-pip-
 
       - name: Install poetry
-        run: pip install poetry
+        run: pip install "poetry<2.0"
 
       - name: Generate req.txt file.
         run : poetry export -f requirements.txt --output requirements.txt --with dev
