@@ -21,7 +21,7 @@ overrides = "^7.4.0"
 pydantic = "^2.12.0"
 pyyaml = "^6.0.1"
 typer = "^0.15.1"
-pypika = "^0.48.9"
+pypika = "^0.51.1"
 
 [tool.poetry.group.dev.dependencies]
 coverage = "^7.3.0"
