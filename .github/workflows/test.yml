@@ -18,6 +18,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12", "3.13", "3.14"]
     environment: test
     steps:
       - name: Checkout
@@ -26,7 +28,7 @@ jobs:
       - name: Setup Python 3
         uses: actions/setup-python@v4
         with:
-          python-version: "3.11"
+          python-version: ${{ matrix.python-version }}
 
       - name: Start Docker
         run: docker-compose -f docker-compose.test.yml up -d

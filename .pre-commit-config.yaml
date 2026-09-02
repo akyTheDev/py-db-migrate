@@ -22,19 +22,18 @@ repos:
       - id: trailing-whitespace
 
   - repo: https://github.com/psf/black
-    rev: 23.3.0
+    rev: 24.10.0
     hooks:
       - id: black
-        language_version: python3.11
 
   - repo: https://github.com/pycqa/flake8
-    rev: 5.0.4
+    rev: 7.1.1
     hooks:
       - id: flake8
         args: [--max-line-length=88, --ignore=F811]
 
   - repo: https://github.com/pycqa/pydocstyle
-    rev: 6.1.1
+    rev: 6.3.0
     hooks:
       - id: pydocstyle
         exclude: ^(tests/)
@@ -43,7 +42,7 @@ repos:
 
 
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v1.5.0
+    rev: v1.20.2
     hooks:
       - id: mypy
         additional_dependencies:
@@ -60,7 +59,7 @@ repos:
         files: pyproject.toml
 
   - repo: https://github.com/PyCQA/bandit
-    rev: 1.7.4
+    rev: 1.7.10
     hooks:
       - id: bandit
         exclude: tests

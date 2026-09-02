@@ -1,4 +1,5 @@
 """Migration down service module."""
+
 from pathlib import Path
 
 import aiofiles
@@ -7,9 +8,7 @@ from pydantic import validate_call
 from pypika import Order, Query, Table
 
 from py_db_migrate.service import EmptyFileError
-from py_db_migrate.service.migration_validator import (
-    MigrationTableAndFolderValidator,
-)
+from py_db_migrate.service.migration_validator import MigrationTableAndFolderValidator
 from py_db_migrate.service.service import SqlService
 from py_db_migrate.service.utils import check_existence_of_file
 

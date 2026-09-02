@@ -1,4 +1,5 @@
 """Unit tests for postgresql class."""
+
 from tests.conftest import psql  # noqa: F401
 
 

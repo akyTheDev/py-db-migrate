@@ -1,18 +1,17 @@
 """Unit tests for migration down service."""
-import aiofiles.os
-import pytest
-
 
 from pathlib import Path
 
-from tests.conftest import use_temp_file, psql  # noqa: F401
+import aiofiles.os
+import pytest
+from py_db_migrate.service import EmptyFileError
+from py_db_migrate.service.migration_down import EmptyTableError, MigrationDown
+
+from tests.conftest import psql, use_temp_file  # noqa: F401
 from tests.unit.service.test_migration_up import (  # noqa: F401
     create_and_delete_migration_table,
     migration_up,
 )
-
-from py_db_migrate.service import EmptyFileError
-from py_db_migrate.service.migration_down import MigrationDown, EmptyTableError
 
 
 @pytest.fixture

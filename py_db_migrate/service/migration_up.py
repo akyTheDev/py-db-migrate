@@ -1,4 +1,5 @@
 """Migration service module."""
+
 from datetime import datetime, timezone
 from pathlib import Path
 from posix import DirEntry
@@ -6,18 +7,12 @@ from typing import Iterable
 
 import aiofiles
 import aiofiles.os
-
 from asyncpg.exceptions import PostgresError
 from pydantic import validate_call
 from pypika import Query, Table
 
-from py_db_migrate.service import (
-    EmptyFileError,
-    TableNotFoundError,
-)
-from py_db_migrate.service.migration_validator import (
-    MigrationTableAndFolderValidator,
-)
+from py_db_migrate.service import EmptyFileError, TableNotFoundError
+from py_db_migrate.service.migration_validator import MigrationTableAndFolderValidator
 from py_db_migrate.service.service import SqlService
 
 
@@ -67,10 +62,10 @@ class MigrationUp(SqlService):
             table=migration_table
         )
 
-        migration_files_from_folder: tuple[
-            str, ...
-        ] = await self.get_existing_migration_files_from_migration_folder(
-            folder=migration_folder
+        migration_files_from_folder: tuple[str, ...] = (
+            await self.get_existing_migration_files_from_migration_folder(
+                folder=migration_folder
+            )
         )
 
         for migration_file_from_folder in migration_files_from_folder:

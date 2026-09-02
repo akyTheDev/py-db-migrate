@@ -1,9 +1,10 @@
 """Common test objects."""
-import pytest
+
+import os
 from shutil import rmtree
 from uuid import uuid4
-import os
 
+import pytest
 from py_db_migrate.database.postgresql import PSql
 
 
