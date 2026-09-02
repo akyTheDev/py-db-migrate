@@ -2,6 +2,8 @@
 
 CLI migration tool for python.
 
+**Supported Python versions**: 3.11, 3.12, 3.13, 3.14
+
 **Usage**:
 
 ```console
