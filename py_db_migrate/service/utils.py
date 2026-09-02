@@ -1,4 +1,5 @@
 """Utils functions of the service layer."""
+
 from pathlib import Path
 
 import aiofiles.os

@@ -1,6 +1,6 @@
 """Main file."""
-import asyncio
 
+import asyncio
 from pathlib import Path
 
 import typer

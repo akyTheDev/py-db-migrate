@@ -1,4 +1,5 @@
 """Shared service objects."""
+
 from logging import Logger
 
 from py_db_migrate.database import Sql

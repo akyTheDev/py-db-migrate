@@ -1,11 +1,13 @@
 """Unit tests for start service."""
+
+from pathlib import Path
+
 import aiofiles.os
 import pytest
 import yaml
-from pathlib import Path
+from py_db_migrate.service.start import Start
 
 from tests.conftest import use_temp_file  # noqa: F401
-from py_db_migrate.service.start import Start
 
 
 @pytest.fixture

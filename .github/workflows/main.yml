@@ -19,8 +19,6 @@ concurrency:
 jobs:
   test:
     uses: ./.github/workflows/test.yml
-    secrets:
-      ALI_SMOKESHOW_DOWNLOAD_ARTIFACTS: ${{ secrets.ALI_SMOKESHOW_DOWNLOAD_ARTIFACTS }}
   tag-release:
     if: github.ref == 'refs/heads/master'
     needs: test

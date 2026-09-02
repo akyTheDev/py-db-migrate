@@ -15,7 +15,7 @@ install-dev:
 
 .PHONY: lint
 lint:
-	SKIP=no-commit-to-branch pre-commit run --all-files
+	SKIP=no-commit-to-branch poetry run pre-commit run --all-files
 
 .PHONY: coverage
 coverage:

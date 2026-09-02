@@ -1,4 +1,5 @@
 """Migration service module."""
+
 from pathlib import Path
 
 from pydantic import validate_call
@@ -50,9 +51,9 @@ class MigrationTableAndFolderValidator(SqlService):
         Returns:
             True if exists. Otherwise, False.
         """
-        exist: bool = (  # nosec
+        exist: bool = (
             await self.database.fetch(
-                "SELECT EXISTS (SELECT 1 "
+                "SELECT EXISTS (SELECT 1 "  # nosec
                 "FROM information_schema.tables "
                 " WHERE table_schema = 'public' "
                 f"AND table_name = '{name}' )"

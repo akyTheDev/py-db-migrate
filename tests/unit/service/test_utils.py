@@ -1,10 +1,11 @@
 """Unit tests for util functions of service layer."""
-import aiofiles.os
+
 from pathlib import Path
 
-from tests.conftest import use_temp_file  # noqa: F401
-
+import aiofiles.os
 from py_db_migrate.service.utils import check_existence_of_file
+
+from tests.conftest import use_temp_file  # noqa: F401
 
 
 class TestCheckExistenceOfFile:

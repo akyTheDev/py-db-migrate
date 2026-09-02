@@ -1,16 +1,13 @@
 """Unit tests for configuration."""
+
+from pathlib import Path
+
 import aiofiles.os
 import pytest
-from pathlib import Path
+from py_db_migrate.configuration import Configuration, DatabaseFields, get_configuration
 
 from tests.conftest import use_temp_file  # noqa: F401
 from tests.unit.service.test_start import start_service  # noqa: F401
-
-from py_db_migrate.configuration import (
-    get_configuration,
-    DatabaseFields,
-    Configuration,
-)
 
 
 class TestGetConfiguration:

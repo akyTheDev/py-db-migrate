@@ -1,15 +1,14 @@
 """Unit tests for migration up service."""
+
+from pathlib import Path
+from uuid import uuid4
+
 import aiofiles.os
 import pytest
-
-
-from uuid import uuid4
-from pathlib import Path
-
-from tests.conftest import use_temp_file, psql  # noqa: F401
-
 from py_db_migrate.service import EmptyFileError, FolderNotFoundError
-from py_db_migrate.service.migration_up import MigrationUp, MigrationError
+from py_db_migrate.service.migration_up import MigrationError, MigrationUp
+
+from tests.conftest import psql, use_temp_file  # noqa: F401
 
 
 @pytest.fixture

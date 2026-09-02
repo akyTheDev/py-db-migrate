@@ -1,11 +1,13 @@
 """Unit tests for migration file service."""
-import aiofiles.os
-import pytest
+
 from datetime import datetime, timezone
 from pathlib import Path
 
-from tests.conftest import use_temp_file  # noqa: F401
+import aiofiles.os
+import pytest
 from py_db_migrate.service.migration_files import MigrationFiles
+
+from tests.conftest import use_temp_file  # noqa: F401
 
 
 @pytest.fixture
