@@ -1,3 +1,9 @@
+## 0.4.0 (2026-09-02)
+
+### Feat
+
+- **/**: support newer python versions (#24)
+
 ## 0.3.1 (2023-09-11)
 
 ### Fix
